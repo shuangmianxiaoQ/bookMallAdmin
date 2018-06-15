@@ -1,0 +1,43 @@
+<h5>书籍列表</h5>
+<div class="row list">
+  <div class="col-md-11">
+    <div class="row list-thead">
+      <div class="col-md-1">编号</div>
+      <div class="col-md-1">图片</div>
+      <div class="col-md-2">书名</div>
+      <div class="col-md-2">作者</div>
+      <div class="col-md-2">出版社</div>
+      <div class="col-md-1">出版时间</div>
+      <div class="col-md-1">价格</div>
+      <div class="col-md-2">操作</div>
+    </div>
+    <div class="row list-tbody" *ngFor="let bookItem of bookLists">
+      <div class="col-md-1">{{bookItem.gid}}</div>
+      <div class="col-md-1">
+        <img [src]="'http://localhost/bookMallPic/'+bookItem.pic" />
+      </div>
+      <div class="col-md-2">《{{bookItem.gname}}》</div>
+      <div class="col-md-2">{{bookItem.author}}</div>
+      <div class="col-md-2">{{bookItem.publishing}}</div>
+      <div class="col-md-1">{{bookItem.publish_time | timestamp | date:'yyyy-MM'}}</div>
+      <div class="col-md-1">{{bookItem.discount_price | currency:'CNY':'symbol-narrow'}}</div>
+      <div class="col-md-2">
+        <button class="btn-mondify">修改</button>
+        <button class="btn-del" (click)="openModal(template, bookItem.gid)">删除</button>
+        <ng-template #template>
+          <div class="modal-body text-center">
+            <p>您确定要删除该商品吗？</p>
+            <button type="button" class="btn btn-danger btn-sm" (click)="ok()">确定</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">取消</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row list-tfoot">
+      <div>
+        <pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" previousText="上一页" nextText="下一页" (pageChanged)="pageChanged($event)">
+        </pagination>
+      </div>
+    </div>
+  </div>
+</div>

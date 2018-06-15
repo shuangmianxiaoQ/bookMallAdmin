@@ -1,0 +1,35 @@
+form {
+  font-size: 14px;
+  color: #73879C;
+}
+
+form>.row>.col-md-9 {
+  padding: 0;
+}
+
+form>.row>.col-md-3 {
+  text-align: right;
+}
+
+form>div {
+  margin: 15px 0;
+}
+
+input, textarea, select {
+  width: 50%;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  margin-top: -2px;
+}
+
+input:hover, textarea:hover, select:hover {
+	outline-color: #a9a9a9;
+}
+
+button {
+  width: 100px;
+}
+
+button.btn-info {
+  margin-right: 40px;
+}
