@@ -1,0 +1,62 @@
+<h5>书籍类别列表</h5>
+<div class="row list">
+  <div class="col-md-8">
+    <div class="row list-thead">
+      <div class="col-md-1">编号</div>
+      <div class="col-md-5">图片</div>
+      <div class="col-md-2">标题</div>
+      <div class="col-md-2">路径</div>
+      <div class="col-md-2">操作</div>
+    </div>
+    <div class="row list-tbody" *ngFor="let carouselItem of carouselList">
+      <div class="col-md-1">{{carouselItem.cid}}</div>
+      <div class="col-md-5">
+        <img [src]="'http://localhost/bookMallPic/'+carouselItem.img" />
+      </div>
+      <div class="col-md-2">{{carouselItem.title}}</div>
+      <div class="col-md-2">{{carouselItem.href}}</div>
+      <div class="col-md-2">
+        <button class="btn-del" (click)="openModal(template, carouselItem.cid)">删除</button>
+        <ng-template #template>
+          <div class="modal-body text-center">
+            <p>您确定要删除该轮播图吗？</p>
+            <button type="button" class="btn btn-danger btn-sm" (click)="ok()">确定</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">取消</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <form>
+      <div class="row">
+        <label class="col-md-3">图片路径：</label>
+        <div class="col-md-9">
+          <input type="text" name="img" [(ngModel)]="img" autocomplete="off" />
+        </div>
+        <label class="col-md-3"></label>
+        <span class="col-md-9">图片路径地址不能超过128个字符，如：'img/index/carousel/carousel_1.jpg'</span>
+      </div>
+      <div class="row">
+        <label class="col-md-3">标题：</label>
+        <div class="col-md-9">
+          <input type="text" name="title" [(ngModel)]="title" autocomplete="off" />
+        </div>
+        <label class="col-md-3"></label>
+        <span class="col-md-9">标题不能超过64个字符</span>
+      </div>
+      <div class="row">
+        <label class="col-md-3">跳转路径：</label>
+        <div class="col-md-9">
+          <input type="text" name="href" [(ngModel)]="href" autocomplete="off" />
+        </div>
+        <label class="col-md-3"></label>
+        <span class="col-md-9">跳转路径地址不能超过128个字符，如：'/details/1'</span>
+      </div>
+      <div class="row">
+        <label class="col-md-3"></label>
+        <button class="btn btn-sm btn-info" (click)="addCarousel()">添加</button>
+      </div>
+    </form>
+  </div>
+</div>

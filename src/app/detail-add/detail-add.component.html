@@ -1,0 +1,104 @@
+<h5>图书详情信息添加</h5>
+<form>
+  <div class="row">
+    <label class="col-md-3">图书ID：</label>
+    <div class="col-md-5">
+      <input type="number" name="gid" [(ngModel)]="detailInfo.gid" autocomplete="off" />
+    </div>
+    <span>图书ID为书籍列表中已存在的编号</span>
+  </div>
+  <div class="row">
+    <label class="col-md-3">版次：</label>
+    <div class="col-md-5">
+      <input type="number" name="edition" [(ngModel)]="detailInfo.edition" autocomplete="off" />
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">页数：</label>
+    <div class="col-md-5">
+      <input type="number" name="page_count" [(ngModel)]="detailInfo.page_count" autocomplete="off" />
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">字数：</label>
+    <div class="col-md-5">
+      <input type="number" name="word_count" [(ngModel)]="detailInfo.word_count" autocomplete="off" />
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">开本：</label>
+    <div class="col-md-5">
+      <select name="format" [(ngModel)]="detailInfo.format">
+        <option value="">--请选择图书开本--</option>
+        <option value="16">16开</option>
+        <option value="32">32开</option>
+        <option value="64">64开</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">印刷时间：</label>
+    <div class="col-md-5">
+      <input type="date" name="printing_time	" [(ngModel)]="detailInfo.printing_time	" />
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">纸张：</label>
+    <div class="col-md-5">
+      <select name="paper" [(ngModel)]="detailInfo.paper">
+        <option value="">--请选择图书纸张--</option>
+        <option value="胶版纸">胶版纸</option>
+        <option value="纯质纸">纯质纸</option>
+        <option value="轻型纸">轻型纸</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">包装：</label>
+    <div class="col-md-5">
+      <select name="package" [(ngModel)]="detailInfo.package">
+        <option value="">--请选择图书包装--</option>
+        <option value="平装">平装</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">产品特色：</label>
+    <div class="col-md-5">
+      <input type="text" name="goods_features" [(ngModel)]="detailInfo.goods_features" autocomplete="off" />
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-md-3">编辑推荐：</label>
+    <div class="col-md-5">
+      <textarea id="" cols="30" rows="5" name="editor_recommend" [(ngModel)]="detailInfo.editor_recommend"></textarea>
+    </div>
+    <span>编辑推荐不能超过1024个字符</span>
+  </div>
+  <div class="row">
+    <label class="col-md-3">内容简介：</label>
+    <div class="col-md-5">
+      <textarea id="" cols="30" rows="5" name="brief_introduction" [(ngModel)]="detailInfo.brief_introduction"></textarea>
+    </div>
+    <span>内容简介不能超过1024个字符</span>
+  </div>
+  <div class="row">
+    <label class="col-md-3">作者简介：</label>
+    <div class="col-md-5">
+      <textarea id="" cols="30" rows="5" name="author_introduction" [(ngModel)]="detailInfo.author_introduction"></textarea>
+    </div>
+    <span>作者简介不能超过1024个字符</span>
+  </div>
+  <div class="row">
+    <label class="col-md-3">精彩书摘：</label>
+    <div class="col-md-5">
+      <textarea id="" cols="30" rows="5" name="wonderful_digest" [(ngModel)]="detailInfo.wonderful_digest"></textarea>
+    </div>
+    <span>精彩书摘不能超过1024个字符</span>
+  </div>
+  <div class="row">
+    <label class="col-md-4"></label>
+    <button class="btn btn-sm btn-info" (click)="addDetail(detailInfo)">确定</button>
+    <button class="btn btn-sm btn-warning" (click)="reset()">重置</button>
+  </div>
+</form>

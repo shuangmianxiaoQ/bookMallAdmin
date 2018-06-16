@@ -6,19 +6,19 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
+  selector: 'app-detail-list',
+  templateUrl: './detail-list.component.html',
+  styleUrls: ['./detail-list.component.css'],
   providers: [HttpService]
 })
-export class BookListComponent implements OnInit {
+export class DetailListComponent implements OnInit {
   modalRef: BsModalRef;
   
-  bookListUrl = `${this.http.baseUrl}book/book_list.php`;
-  delBookUrl = `${this.http.baseUrl}book/del_book.php`;
-  gid: any = null;
+  detailListUrl = `${this.http.baseUrl}detail/detail_list.php`;
+  delDetailUrl = `${this.http.baseUrl}detail/del_detail.php`;
+  did: any = null;
 
-  bookLists: string[] = null;
+  detailLists: string[] = null;
   totalItems: number = 0;
   itemsPerPage: number = 10;
   pno: any = 1;
@@ -29,53 +29,49 @@ export class BookListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getBookList();
+    this.getdetailList();
   }
 
   pageChanged(event: PageChangedEvent): void {
     this.pno = event.page;
-    this.getBookList();
+    this.getdetailList();
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
-  getBookList() {
+  getdetailList() {
     let httpOptios = {
       params: new HttpParams().set('pno', this.pno)
     }
-    this.http.sendGetMethod(this.bookListUrl, httpOptios)
+    this.http.sendGetMethod(this.detailListUrl, httpOptios)
       .subscribe((data: any) => {
-        console.log(data);
-        this.bookLists = data['bookLists'];
+        this.detailLists = data['detailLists'];
         this.totalItems = data['totalItems'];
         this.itemsPerPage = data['itemsPerPage'];
       })
   }
 
-  openModal(template: TemplateRef<any>, gid) {
+  openModal(template: TemplateRef<any>, did) {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
-    this.gid = gid;
+    this.did = did;
   }
 
   ok(): void {
-    this.delBook();
+    this.deldetail();
     this.modalRef.hide();
-    // setTimeout(() => {
-    //   this.getBookList();
-    // }, 200);
   }
  
   cancel(): void {
     this.modalRef.hide();
   }
 
-  delBook() {
+  deldetail() {
     let httpOptios = {
-      params: new HttpParams().set('gid', this.gid)
+      params: new HttpParams().set('did', this.did)
     }
-    this.http.sendGetMethod(this.delBookUrl, httpOptios)
+    this.http.sendGetMethod(this.delDetailUrl, httpOptios)
       .subscribe((data: any) => {
         console.log(data);
-        this.getBookList();
+        this.getdetailList();
       })
   }
 }

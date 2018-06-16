@@ -1,0 +1,43 @@
+<h5>图书详情列表</h5>
+<div class="row list">
+  <div class="col-md-11">
+    <div class="row list-thead">
+      <div class="col-md-1">编号</div>
+      <div class="col-md-2">书名</div>
+      <div class="col-md-1">页数</div>
+      <div class="col-md-1">字数</div>
+      <div class="col-md-1">开本</div>
+      <div class="col-md-1">印刷时间</div>
+      <div class="col-md-1">纸张</div>
+      <div class="col-md-3">内容简介</div>
+      <div class="col-md-1">操作</div>
+    </div>
+    <div class="row list-tbody" *ngFor="let detailItem of detailLists">
+        <div class="col-md-1">{{detailItem.did}}</div>
+        <div class="col-md-2">《{{detailItem.gname}}》</div>
+        <div class="col-md-1">{{detailItem.page_count}}</div>
+        <div class="col-md-1">{{detailItem.word_count}}</div>
+        <div class="col-md-1">{{detailItem.format}}开</div>
+        <div class="col-md-1">{{detailItem.printing_time | timestamp | date:'yyyy-MM'}}</div>
+        <div class="col-md-1">{{detailItem.paper}}</div>
+        <div class="col-md-3">{{detailItem.brief_introduction}}</div>
+      <div class="col-md-1 operate">
+        <button class="btn-mondify">修改</button>
+        <button class="btn-del" (click)="openModal(template, detailItem.did)">删除</button>
+        <ng-template #template>
+          <div class="modal-body text-center">
+            <p>您确定要删除该商品吗？</p>
+            <button type="button" class="btn btn-danger btn-sm" (click)="ok()">确定</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">取消</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row list-tfoot">
+      <div>
+        <pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" previousText="上一页" nextText="下一页" (pageChanged)="pageChanged($event)">
+        </pagination>
+      </div>
+    </div>
+  </div>
+</div>

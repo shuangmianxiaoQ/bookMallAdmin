@@ -17,6 +17,10 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {BookListComponent} from './book-list/book-list.component';
 import {BookAddComponent} from './book-add/book-add.component';
 import {TimestampPipe} from './timestamp.pipe';
+import {CategoryListComponent} from './category-list/category-list.component';
+import {CarouselListComponent} from './carousel-list/carousel-list.component';
+import {DetailListComponent} from './detail-list/detail-list.component';
+import {DetailAddComponent} from './detail-add/detail-add.component';
 
 library.add(fas);
 
@@ -28,7 +32,11 @@ library.add(fas);
     NotFoundComponent,
     BookListComponent,
     BookAddComponent,
-    TimestampPipe
+    TimestampPipe,
+    CategoryListComponent,
+    CarouselListComponent,
+    DetailListComponent,
+    DetailAddComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, ModalModule.forRoot(),
