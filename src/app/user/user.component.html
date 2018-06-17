@@ -1,0 +1,31 @@
+<p class="placement">您当前的位置：首页 > 用户管理 > 用户列表</p>
+<div class="row list">
+  <div class="col-md-11">
+    <div class="row list-thead">
+      <div class="col-md-1">编号</div>
+      <div class="col-md-1">用户名</div>
+      <div class="col-md-1">性别</div>
+      <div class="col-md-2">邮箱</div>
+      <div class="col-md-2">电话</div>
+      <div class="col-md-2">昵称</div>
+      <div class="col-md-3">收货地址</div>
+    </div>
+    <div class="row list-tbody" *ngFor="let userItem of userLists">
+      <div class="col-md-1">{{userItem.uid}}</div>
+      <div class="col-md-1">{{userItem.uname}}</div>
+      <div class="col-md-1" *ngIf="userItem.gender===null"></div>
+      <div class="col-md-1" *ngIf="userItem.gender==0">女</div>
+      <div class="col-md-1" *ngIf="userItem.gender==1">男</div>
+      <div class="col-md-2">{{userItem.email}}</div>
+      <div class="col-md-2">{{userItem.phone}}</div>
+      <div class="col-md-2">{{userItem.user_name}}</div>
+      <div class="col-md-3">
+        <div class="row" *ngFor="let addressItem of userItem.addressList">
+          <div class="col-md-12 address">
+            <p>{{addressItem.receiver}} {{addressItem.phone}} {{addressItem.province}}{{addressItem.city}}{{addressItem.county}}{{addressItem.street}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

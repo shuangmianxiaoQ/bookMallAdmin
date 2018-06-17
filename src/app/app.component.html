@@ -1,11 +1,18 @@
 <div id="wrapper">
   <div class="row">
     <div class="col-md-2" id="menu">
-      <p href="#" class="logo">图书商城后台</p>
-      <a href="#" class="home">
+      <p class="logo">图书商城后台</p>
+      <a routerLink="/index" class="home">
         <fa-icon [icon]="['fas', 'home']"></fa-icon> 后台首页
       </a>
       <dl class="fore1">
+        <dt>
+          <fa-icon [icon]="['fas', 'user']"></fa-icon> 用户管理</dt>
+        <dd>
+          <a routerLink="/userList">用户列表</a>
+        </dd>
+      </dl>
+      <dl class="fore2">
         <dt>
           <fa-icon [icon]="['fas', 'book-open']"></fa-icon> 书籍管理</dt>
         <dd>
@@ -15,14 +22,14 @@
           <a routerLink="/bookAdd">书籍添加</a>
         </dd>
       </dl>
-      <dl class="fore2">
+      <dl class="fore3">
         <dt>
           <fa-icon [icon]="['fas', 'th-list']"></fa-icon> 书籍类别管理</dt>
         <dd>
           <a routerLink="/categoryList">书籍类别列表</a>
         </dd>
       </dl>
-      <dl class="fore3">
+      <dl class="fore4">
         <dt>
           <fa-icon [icon]="['fas', 'info-circle']"></fa-icon> 图书详情管理</dt>
         <dd>
@@ -32,26 +39,11 @@
           <a routerLink="detailAdd">图书详情添加</a>
         </dd>
       </dl>
-      <dl class="fore4">
+      <dl class="fore5">
         <dt>
-          <fa-icon [icon]="['fas', 'life-ring']"></fa-icon> 首页书籍管理</dt>
+          <fa-icon [icon]="['fas', 'life-ring']"></fa-icon> 商城首页管理</dt>
         <dd>
-          <a routerLink="/carouselList">首页轮播图</a>
-        </dd>
-        <dd>
-          <a routerLink="">新书上架</a>
-        </dd>
-        <dd>
-          <a routerLink="">热销书籍</a>
-        </dd>
-        <dd>
-          <a routerLink="">图书推荐</a>
-        </dd>
-        <dd>
-          <a routerLink="">新书热卖榜</a>
-        </dd>
-        <dd>
-          <a routerLink="">图书畅销榜</a>
+          <a routerLink="/carouselList">轮播图</a>
         </dd>
       </dl>
     </div>

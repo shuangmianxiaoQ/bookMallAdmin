@@ -1,0 +1,44 @@
+.placement {
+  padding: 6px 20px;
+  background-color: #fefefe;
+  box-shadow: 0 0 12px 0 #dfe3eb;
+  font-size: 13px;
+  color: #333;
+}
+
+.row {
+  margin: 0;
+}
+
+.list {
+  font-size: 13px;
+  color: #73879C;
+}
+
+.list-thead {
+  text-align: center;
+  margin: 0 0 10px;
+  padding: 5px 0;
+  background: #f3f3f3;
+  border: 1px solid #e9e9e9;
+  border-bottom-width: 2px;
+}
+
+.list-tbody {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.address {
+  padding: 0;
+}
+
+.address>p {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #fefefe;
+  padding: 5px;
+  margin-bottom: 8px;
+}

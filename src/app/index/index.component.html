@@ -1,0 +1,45 @@
+<p class="placement">您当前的位置：首页</p>
+<h1>图书商城后台管理系统</h1>
+<div class="row list">
+  <div class="col-md-8">
+    <div class="row list-thead">
+      <div class="col-md-12">
+        <fa-icon [icon]="['fa', 'info-circle']"></fa-icon> 商城数据信息
+      </div>
+    </div>
+    <div class="row list-tbody" *ngIf="count">
+      <div class="col-md-12">用户：
+        <span>{{count.userCount}}个</span>
+        （<span routerLink="/userList">查看详情</span>）
+      </div>
+      <div class="col-md-12">书籍：
+        <span>{{count.bookCount}}件</span>
+        （<span routerLink="/bookList">查看详情</span>）
+      </div>
+      <div class="col-md-12">书籍类别：
+        <span>{{count.categoryCount}}种</span>
+        （<span routerLink="/categoryList">查看详情</span>）
+      </div>
+      <div class="col-md-12">图书详情：
+        <span>{{count.detailCount}}个</span>
+        （<span routerLink="/detailList">查看详情</span>）
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row list">
+  <div class="col-md-8">
+    <div class="row list-thead">
+      <div class="col-md-12">
+        <fa-icon [icon]="['fa', 'info-circle']"></fa-icon> 系统信息
+      </div>
+    </div>
+    <div class="row list-tbody">
+      <div class="col-md-12">网站名称：吾爱图书网</div>
+      <div class="col-md-12">数据库：MySql 5.7</div>
+      <div class="col-md-12">服务器：Apache/2.4.23</div>
+      <div class="col-md-12">开发语言：PHP，Angular，TypeScript ...</div>
+      <div class="col-md-12">版权所有：Copyright © 2018 吾爱图书网, All Rights Reserved</div>
+    </div>
+  </div>
+</div>

@@ -8,12 +8,19 @@ import {CategoryListComponent} from './category-list/category-list.component';
 import {CarouselListComponent} from './carousel-list/carousel-list.component';
 import {DetailListComponent} from './detail-list/detail-list.component';
 import {DetailAddComponent} from './detail-add/detail-add.component';
+import {UserComponent} from './user/user.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes : Routes = [
   {
     path: '',
     component: IndexComponent
+  }, {
+    path: 'index',
+    component: IndexComponent
+  }, {
+    path: 'userList',
+    component: UserComponent
   }, {
     path: 'bookList',
     component: BookListComponent

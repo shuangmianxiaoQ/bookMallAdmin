@@ -8,28 +8,25 @@
 }
 
 #menu {
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 2px 12px 0 #dfe3eb;
+  background-color: #333;
+  color: #fefefe;
 }
 
 .logo {
   margin: 20px;
   font-size: 1.5rem;
-  color: #222;
+  color: #fff;
 }
 
 .home {
-  background-color: #fff;
-  color: #333;
+  color: #fefefe;
   font-weight: bolder;
   display: block;
-  border-radius: 2px;
-  padding: 20px;
+  padding: 32px 20px;
 }
 
 .home:hover {
-  color: #666;
+  color: #fff;
   text-decoration: unset;
 }
 
@@ -46,11 +43,11 @@ dd {
 }
 
 dd>a {
-  color: #6e6e6e;
+  color: #fefefe;
 }
 
 dd>a:hover {
-  color: #1976d2;
+  color: #28a745;
   text-decoration: unset;
 }
 

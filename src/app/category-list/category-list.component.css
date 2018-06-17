@@ -1,3 +1,11 @@
+.placement {
+  padding: 6px 20px;
+  background-color: #fefefe;
+  box-shadow: 0 0 12px 0 #dfe3eb;
+  font-size: 13px;
+  color: #333;
+}
+
 .row {
   margin: 0;
 }

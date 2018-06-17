@@ -11,7 +11,6 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons';
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
 import {IndexComponent} from './index/index.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {BookListComponent} from './book-list/book-list.component';
@@ -21,13 +20,13 @@ import {CategoryListComponent} from './category-list/category-list.component';
 import {CarouselListComponent} from './carousel-list/carousel-list.component';
 import {DetailListComponent} from './detail-list/detail-list.component';
 import {DetailAddComponent} from './detail-add/detail-add.component';
+import {UserComponent} from './user/user.component';
 
 library.add(fas);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     IndexComponent,
     NotFoundComponent,
     BookListComponent,
@@ -36,7 +35,8 @@ library.add(fas);
     CategoryListComponent,
     CarouselListComponent,
     DetailListComponent,
-    DetailAddComponent
+    DetailAddComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, ModalModule.forRoot(),
