@@ -1,0 +1,45 @@
+.edit {
+  top: 100px;
+  color: #565A5F;
+  font-family: simhei, Arial, Helvetica, sans-serif;
+}
+
+.edit .modal-header {
+  padding: 8px 16px;
+}
+
+.edit .modal-header>.close {
+  margin: -0.5rem;
+  font-size: 16px;
+}
+
+.edit .modal-body>form {
+  padding: 10px 0;
+}
+
+.edit .modal-body>form>.row {
+  margin: 10px 0;
+}
+
+.edit .col-form-label {
+  font-size: 12px;
+  text-align: right;
+}
+
+.edit .input {
+  padding: 0;
+}
+
+.edit .modal-body>form input {
+  width: 200px;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  line-height: 20px;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.edit .modal-body>form button {
+  width: 80px;
+  padding: 2px;
+}

@@ -10,7 +10,7 @@
       <div class="col-md-2">{{categoryItem.fid}}</div>
       <div class="col-md-4">{{categoryItem.fname}}</div>
       <div class="col-md-6">
-        <button class="btn-mondify">修改</button>
+        <button class="btn-mondify" (click)="editCategory(categoryItem.fid, categoryItem.fname)">修改</button>
         <button class="btn-del" (click)="openModal(template, categoryItem.fid)">删除</button>
         <ng-template #template>
           <div class="modal-body text-center">
@@ -27,13 +27,13 @@
       <div class="row">
         <label class="col-md-3">类目：</label>
         <div class="col-md-9">
-          <input type="text" name="fname" [(ngModel)]="fname" autocomplete="off" />
+          <input type="text" name="fname" [(ngModel)]="fname" autocomplete="off" #cname />
         </div>
         <label class="col-md-3"></label>
         <span>类目名称不能超过32个字符</span>
       </div>
       <div class="row">
-          <label class="col-md-3"></label>
+        <label class="col-md-3"></label>
         <button class="btn btn-sm btn-info" (click)="addCategory()">添加</button>
       </div>
     </form>

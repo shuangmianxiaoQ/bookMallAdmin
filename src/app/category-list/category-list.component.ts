@@ -54,7 +54,7 @@ export class CategoryListComponent implements OnInit {
         })
     }
   }
-
+  
   openModal(template: TemplateRef<any>, fid) {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
     this.fid = fid;
@@ -76,6 +76,49 @@ export class CategoryListComponent implements OnInit {
     this.http.sendGetMethod(this.deCategoryUrl, httpOptios)
       .subscribe((data: any) => {
         this.getCategoryList();
+      })
+  }
+
+  editCategory(fid, fname) {
+    const initialState = {
+      fid: fid,
+      fname: fname
+    };
+    this.modalRef = this.modalService.show(
+      EditCategoryModalComponent,
+      Object.assign({initialState}, { class: 'edit' })
+    );
+  }
+}
+
+@Component({
+  selector: 'edit-category-modal',
+  templateUrl: './edit-category/edit-category.component.html',
+  providers: [HttpService]
+})
+
+export class EditCategoryModalComponent implements OnInit {
+  editCategoryUrl: string = `${this.http.baseUrl}category/edit_category.php`;
+
+  fid: any;
+  fname: string;
+ 
+  constructor(
+    private http: HttpService,
+    public bsModalRef: BsModalRef
+  ) {}
+ 
+  ngOnInit() { }
+
+  saveEdit() {
+    let httpOptions = {
+      params: new HttpParams().set('fid', this.fid).set('fname', this.fname)
+    }
+    this.http.sendGetMethod(this.editCategoryUrl, httpOptions)
+      .subscribe((data: any) => {
+        this.bsModalRef.hide();
+        alert(data.msg);
+        location.reload();
       })
   }
 }

@@ -21,6 +21,7 @@ import {CarouselListComponent} from './carousel-list/carousel-list.component';
 import {DetailListComponent} from './detail-list/detail-list.component';
 import {DetailAddComponent} from './detail-add/detail-add.component';
 import {UserComponent} from './user/user.component';
+import {EditCategoryModalComponent} from './category-list/category-list.component';
 
 library.add(fas);
 
@@ -36,13 +37,17 @@ library.add(fas);
     CarouselListComponent,
     DetailListComponent,
     DetailAddComponent,
-    UserComponent
+    UserComponent,
+    EditCategoryModalComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, ModalModule.forRoot(),
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     FontAwesomeModule
+  ],
+  entryComponents: [
+    EditCategoryModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
